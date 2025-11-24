@@ -4,36 +4,45 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-end justify-between bg-cover bg-center overflow-hidden" style={{
-      backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop)',
-      backgroundAttachment: 'fixed'
-    }}>
-      {/* Dark overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
-
-      {/* Header text (top left) */}
-      <div className="absolute top-8 left-8 z-20">
-        <p className="text-white text-xl font-light tracking-widest">Multimedia Artist</p>
+    <section className="relative min-h-screen flex flex-col justify-between bg-white pt-20 pb-12">
+      {/* Top section with navigation text */}
+      <div className="flex justify-between items-start px-6 sm:px-12 mb-12">
+        <p className="text-xs sm:text-sm font-light text-gray-600 tracking-widest">Multimedia Artist</p>
+        <p className="text-xs sm:text-sm font-light text-gray-600 tracking-widest">Portfolio</p>
       </div>
 
-      {/* Header right */}
-      <div className="absolute top-8 right-8 z-20">
-        <p className="text-white text-xl font-light tracking-widest">Portfolio</p>
+      {/* Main hero content */}
+      <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-6 sm:px-12 max-w-7xl mx-auto w-full">
+        {/* Left side - Text */}
+        <div className="md:w-1/2">
+          <h1 className="text-7xl sm:text-8xl md:text-9xl font-serif font-bold text-black mb-2 leading-tight">
+            GORDON
+          </h1>
+          <p className="text-4xl sm:text-5xl font-serif font-light text-black mb-8 italic">
+            Aliprandi
+          </p>
+          
+          <Link
+            href="#contact"
+            className="inline-block bg-black text-white px-8 py-3 text-sm font-light tracking-wider hover:bg-gray-800 transition-colors"
+          >
+            WORK WITH ME
+          </Link>
+        </div>
+
+        {/* Right side - Featured Image */}
+        <div className="md:w-1/2 h-80 md:h-96 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop"
+            alt="Featured work"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
-      {/* Main content - bottom left */}
-      <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-2xl pb-20">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-gold mb-4 leading-tight tracking-tight">
-          GORDON
-        </h1>
-        <p className="text-5xl sm:text-6xl font-serif text-gold italic mb-12 font-light">Eleganti</p>
-        
-        <Link
-          href="#contact"
-          className="inline-block bg-black/80 text-white px-8 py-4 font-semibold hover:bg-gold hover:text-black transition-all duration-300 tracking-widest text-sm uppercase border border-gold/50"
-        >
-          Work With Me
-        </Link>
+      {/* Scroll indicator */}
+      <div className="flex justify-center mt-12">
+        <p className="text-xs font-light text-gray-500 tracking-widest">SCROLL</p>
       </div>
     </section>
   );
