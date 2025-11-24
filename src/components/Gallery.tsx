@@ -16,7 +16,6 @@ export default function Gallery() {
   const [error, setError] = useState<string | null>(null);
   const [useS3, setUseS3] = useState(false);
 
-  // Fallback photos if S3 is not configured
   const fallbackPhotos = [
     {
       id: '1',
@@ -46,20 +45,6 @@ export default function Gallery() {
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop',
       key: 'people/portrait.jpg',
     },
-    {
-      id: '5',
-      title: 'Forest Path',
-      category: 'Nature',
-      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=600&fit=crop',
-      key: 'nature/forest.jpg',
-    },
-    {
-      id: '6',
-      title: 'City Lights',
-      category: 'Street',
-      image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&h=600&fit=crop',
-      key: 'street/city-lights.jpg',
-    },
   ];
 
   useEffect(() => {
@@ -68,24 +53,22 @@ export default function Gallery() {
         setLoading(true);
         const response = await fetch('/api/photos');
         
-        if (!response.ok) {
-          throw new Error('Failed to fetch photos from S3');
-        }
-
-        const data = await response.json();
-
-        if (data.photos && data.photos.length > 0) {
-          setPhotos(data.photos);
-          setUseS3(true);
-          setError(null);
+        if (response.ok) {
+          const data = await response.json();
+          if (data.photos && data.photos.length > 0) {
+            setPhotos(data.photos);
+            setUseS3(true);
+            setError(null);
+          } else {
+            setPhotos(fallbackPhotos);
+            setError('S3 photos not available');
+          }
         } else {
-          // Fallback to default photos if S3 is empty
           setPhotos(fallbackPhotos);
-          setError('S3 bucket is empty, using sample photos');
+          setError('Using sample photos (S3 not configured)');
         }
       } catch (err) {
         console.error('Error fetching photos:', err);
-        // Use fallback photos if S3 fetch fails
         setPhotos(fallbackPhotos);
         setError('Using sample photos (S3 not configured)');
       } finally {
@@ -118,16 +101,6 @@ export default function Gallery() {
             </p>
           )}
         </div>
-            <p className="text-sm text-gold mt-4">
-              ℹ️ {error}
-            </p>
-          )}
-          {useS3 && (
-            <p className="text-sm text-green-400 mt-2">
-              ✓ Loading photos from AWS S3 ({photos.length} photos)
-            </p>
-          )}
-        </div>
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
@@ -142,7 +115,6 @@ export default function Gallery() {
           </div>
         ) : (
           <>
-            {/* Dynamic grid based on photo count */}
             <div
               className={`grid gap-8 sm:gap-10 ${
                 photos.length === 1
@@ -159,27 +131,20 @@ export default function Gallery() {
                   key={photo.id}
                   className="group relative overflow-hidden border border-gray-300 transition-all duration-300 h-64 sm:h-72 lg:h-80 hover:shadow-lg rounded-lg"
                 >
-                  {/* Image */}
                   <img
                     src={photo.image}
                     alt={photo.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
-                      {photo.title}
-                    </h3>
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2 text-center">{photo.title}</h3>
                     <p className="text-sm text-gray-300">{photo.category}</p>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* Photo count info */}
             <div className="mt-8 text-center">
-              <p className="text-sm text-secondary">
+              <p className="text-sm text-gray-700">
                 Displaying {photos.length} photo{photos.length !== 1 ? 's' : ''}
               </p>
             </div>

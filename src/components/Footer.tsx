@@ -94,31 +94,3 @@ export default function Footer() {
     </footer>
   );
 }
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 002.856-3.915 3.967 3.967 0 01-1.017.27 5.5 5.5 0 002.416-3.03 11.016 11.016 0 01-3.288 1.256 5.5 5.5 0 00-9.475 5.02A15.64 15.64 0 011.671 3.149a5.5 5.5 0 001.703 7.35 5.47 5.47 0 01-2.49-.687v.069a5.5 5.5 0 004.414 5.39 5.52 5.52 0 01-2.48.092 5.507 5.507 0 005.141 3.821 11.04 11.04 0 01-6.84 2.366 15.62 15.62 0 008.433 2.467c10.12 0 15.631-8.379 15.631-15.63 0-.238-.005-.475-.014-.71a11.172 11.172 0 002.728-2.864z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-gold/30 pt-12">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm font-light">
-              © {currentYear} HSA Photography. All rights reserved.
-            </p>
-            <div className="flex gap-8 mt-6 sm:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-gold text-sm transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-gold text-sm transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}

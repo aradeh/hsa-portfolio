@@ -107,19 +107,3 @@ export default function Header() {
     </header>
   );
 }
-            >
-              About
-            </Link>
-            <Link
-              href="#contact"
-              className="block bg-accent text-white px-3 py-2 rounded-md text-base font-medium mt-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-          </div>
-        )}
-      </nav>
-    </header>
-  );
-}
