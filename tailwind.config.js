@@ -7,13 +7,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1f2937',
-        secondary: '#6b7280',
-        accent: '#3b82f6',
+        gold: '#d4af37',
+        luxury: {
+          dark: '#0f0f0f',
+          light: '#1a1a1a',
+          gold: '#d4af37',
+          text: '#ffffff',
+        },
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Montserrat', 'sans-serif'],
       },
       spacing: {
         '128': '32rem',
-        '144': '36rem',
+      },
+      boxShadow: {
+        luxury: '0 10px 40px rgba(212, 175, 55, 0.15)',
+        'luxury-lg': '0 20px 60px rgba(212, 175, 55, 0.2)',
       },
     },
   },

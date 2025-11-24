@@ -7,34 +7,34 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md border-b border-gold/30">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
+            <Link href="/" className="text-4xl font-serif font-bold text-gold hover:text-white transition-colors tracking-wider">
               HSA
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-12">
               <Link
                 href="#gallery"
-                className="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors tracking-widest uppercase"
               >
                 Gallery
               </Link>
               <Link
                 href="#about"
-                className="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors tracking-widest uppercase"
               >
                 About
               </Link>
               <Link
                 href="#contact"
-                className="bg-accent text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                className="luxury-button text-sm"
               >
                 Contact
               </Link>
@@ -45,7 +45,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-accent focus:outline-none"
+              className="text-gold hover:text-white focus:outline-none"
             >
               <svg
                 className="h-6 w-6"

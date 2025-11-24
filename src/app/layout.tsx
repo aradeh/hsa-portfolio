@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900 antialiased">
+      <body className="bg-black text-white antialiased" style={{
+        backgroundImage: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)'
+      }}>
         {children}
       </body>
     </html>

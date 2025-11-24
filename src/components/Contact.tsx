@@ -36,24 +36,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">
             Get In Touch
           </h2>
-          <p className="text-lg text-secondary">
+          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <p className="text-lg text-gray-400 font-light">
             Have a project in mind? I&apos;d love to hear from you. Send me a message and I&apos;ll
             respond as soon as possible.
           </p>
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-8 border border-gold/30 p-8 lg:p-12 backdrop-blur-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
+              <label htmlFor="name" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
                 Name
               </label>
               <input
@@ -63,14 +64,14 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
                 placeholder="Your name"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
                 Email
               </label>
               <input
@@ -80,7 +81,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -88,7 +89,7 @@ export default function Contact() {
 
           {/* Subject */}
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-primary mb-2">
+            <label htmlFor="subject" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
               Subject
             </label>
             <input
@@ -98,14 +99,14 @@ export default function Contact() {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition"
+              className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
               placeholder="Project subject"
             />
           </div>
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
+            <label htmlFor="message" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
               Message
             </label>
             <textarea
@@ -115,7 +116,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition resize-none"
+              className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition resize-none"
               placeholder="Tell me about your project..."
             ></textarea>
           </div>
@@ -123,14 +124,14 @@ export default function Contact() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-accent text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition-colors duration-200"
+            className="w-full luxury-button"
           >
             Send Message
           </button>
 
           {/* Success Message */}
           {submitted && (
-            <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+            <div className="bg-gold/10 border border-gold text-gold px-6 py-4">
               ✅ Thank you for your message! I&apos;ll get back to you soon.
             </div>
           )}

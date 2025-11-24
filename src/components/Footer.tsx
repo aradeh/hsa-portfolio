@@ -6,33 +6,33 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-white py-12 sm:py-16">
+    <footer className="bg-black border-t border-gold/30 text-white py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">HSA</h3>
-            <p className="text-gray-400">
+            <h3 className="text-3xl font-serif font-bold mb-4 text-gold tracking-wider">HSA</h3>
+            <p className="text-gray-400 font-light">
               Professional photography capturing life&apos;s beautiful moments.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="#gallery" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="#gallery" className="text-gray-400 hover:text-gold transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="#about" className="text-gray-400 hover:text-gold transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="#contact" className="text-gray-400 hover:text-gold transition-colors">
                   Contact
                 </Link>
               </li>
@@ -41,21 +41,21 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li className="text-gray-400">Portrait Photography</li>
-              <li className="text-gray-400">Landscape Photography</li>
-              <li className="text-gray-400">Event Coverage</li>
+            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Services</h4>
+            <ul className="space-y-3">
+              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Portrait Photography</li>
+              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Landscape Photography</li>
+              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Event Coverage</li>
             </ul>
           </div>
 
           {/* Social Links */}
           <div>
-            <h4 className="font-semibold mb-4">Follow</h4>
-            <div className="flex space-x-4">
+            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Follow</h4>
+            <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-gold transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-gold transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-gold transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -87,16 +87,16 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-gold/30 pt-12">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm font-light">
               © {currentYear} HSA Photography. All rights reserved.
             </p>
-            <div className="flex gap-6 mt-4 sm:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <div className="flex gap-8 mt-6 sm:mt-0">
+              <Link href="#" className="text-gray-400 hover:text-gold text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-gold text-sm transition-colors">
                 Terms of Service
               </Link>
             </div>
