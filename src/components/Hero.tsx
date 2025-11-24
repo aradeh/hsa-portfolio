@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-between bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop)' }}>
       <div className="absolute inset-0 bg-black/40"></div>
       
-      <div className="relative z-10 flex flex-col justify-between h-full pt-20 pb-12">
+      <div className="relative z-10 flex flex-col justify-between h-full pt-20">
         {/* Top section with navigation text */}
         <div className="flex justify-between items-start px-6 sm:px-12 mb-12">
           <p className="text-xs sm:text-sm font-light text-white tracking-widest">Multimedia Artist</p>
@@ -30,11 +30,11 @@ export default function Hero() {
             WORK WITH ME
           </Link>
         </div>
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="flex justify-center">
-          <p className="text-xs font-light text-white tracking-widest">SCROLL</p>
-        </div>
+      {/* Scroll indicator - positioned at bottom */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <p className="text-xs font-light text-white tracking-widest">SCROLL</p>
       </div>
     </section>
   );
