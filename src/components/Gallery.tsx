@@ -97,17 +97,27 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-black">
+    <section id="gallery" className="py-20 sm:py-28 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-black mb-6 tracking-tight">
             Gallery
           </h2>
-          <div className="h-1 w-20 bg-gold mx-auto mb-6"></div>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide">
-            Explore a collection of my recent photography work across various categories.
+          <div className="h-1 w-20 bg-amber-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-light tracking-wide">
+            Explore a collection of my recent artwork and design projects.
           </p>
           {error && (
+            <p className="text-sm text-amber-600 mt-4">
+              ℹ️ {error}
+            </p>
+          )}
+          {useS3 && (
+            <p className="text-sm text-green-600 mt-2">
+              ✓ Loading photos from AWS S3 ({photos.length} photos)
+            </p>
+          )}
+        </div>
             <p className="text-sm text-gold mt-4">
               ℹ️ {error}
             </p>
@@ -122,13 +132,13 @@ export default function Gallery() {
         {loading ? (
           <div className="flex justify-center items-center h-64">
             <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gold"></div>
-              <p className="mt-4 text-gray-400">Loading gallery...</p>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
+              <p className="mt-4 text-gray-700">Loading gallery...</p>
             </div>
           </div>
         ) : photos.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-lg text-gray-400">No photos available</p>
+            <p className="text-lg text-gray-700">No photos available</p>
           </div>
         ) : (
           <>
@@ -147,7 +157,7 @@ export default function Gallery() {
               {photos.map((photo) => (
                 <div
                   key={photo.id}
-                  className="group relative overflow-hidden luxury-border transition-all duration-300 h-64 sm:h-72 lg:h-80 hover:shadow-luxury-lg"
+                  className="group relative overflow-hidden border border-gray-300 transition-all duration-300 h-64 sm:h-72 lg:h-80 hover:shadow-lg rounded-lg"
                 >
                   {/* Image */}
                   <img

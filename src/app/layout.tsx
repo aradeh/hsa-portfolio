@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'HSA Photography Portfolio',
-  description: 'Professional photography portfolio showcasing amazing photography work',
+  title: 'Gordon Eleganti - Multimedia Artist',
+  description: 'Eco-art and pro-nature designs by Gordon Eleganti',
   icons: {
     icon: '/favicon.ico',
   },
@@ -16,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased" style={{
-        backgroundImage: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)'
-      }}>
+      <body className="bg-white text-black antialiased">
         {children}
       </body>
     </html>

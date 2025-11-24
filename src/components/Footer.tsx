@@ -6,34 +6,34 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-gold/30 text-white py-16 sm:py-20">
+    <footer className="bg-white border-t border-gray-300 text-black py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-3xl font-serif font-bold mb-4 text-gold tracking-wider">HSA</h3>
-            <p className="text-gray-400 font-light">
-              Professional photography capturing life&apos;s beautiful moments.
+            <h3 className="text-3xl font-serif font-bold mb-4 text-black tracking-wider">HSA</h3>
+            <p className="text-gray-700 font-light">
+              Multimedia artist creating eco-friendly and sustainable designs.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Quick Links</h4>
+            <h4 className="font-semibold mb-6 text-black uppercase tracking-widest text-sm">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#gallery" className="text-gray-400 hover:text-gold transition-colors">
+                <Link href="#gallery" className="text-gray-700 hover:text-amber-600 transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-gold transition-colors">
+                <Link href="#about" className="text-gray-700 hover:text-amber-600 transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-400 hover:text-gold transition-colors">
-                  Contact
+                <Link href="#portfolio" className="text-gray-700 hover:text-amber-600 transition-colors">
+                  Portfolio
                 </Link>
               </li>
             </ul>
@@ -41,21 +41,21 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Services</h4>
+            <h4 className="font-semibold mb-6 text-black uppercase tracking-widest text-sm">Services</h4>
             <ul className="space-y-3">
-              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Portrait Photography</li>
-              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Landscape Photography</li>
-              <li className="text-gray-400 hover:text-gold transition-colors cursor-pointer">Event Coverage</li>
+              <li className="text-gray-700 hover:text-amber-600 transition-colors cursor-pointer">Art Direction</li>
+              <li className="text-gray-700 hover:text-amber-600 transition-colors cursor-pointer">Design Consulting</li>
+              <li className="text-gray-700 hover:text-amber-600 transition-colors cursor-pointer">Eco-Projects</li>
             </ul>
           </div>
 
           {/* Social Links */}
           <div>
-            <h4 className="font-semibold mb-6 text-gold uppercase tracking-widest text-sm">Follow</h4>
+            <h4 className="font-semibold mb-6 text-black uppercase tracking-widest text-sm">Follow</h4>
             <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-gold transition-colors"
+                className="text-black hover:text-amber-600 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -66,18 +66,34 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-gold transition-colors"
-                aria-label="Facebook"
+                className="text-black hover:text-amber-600 transition-colors"
+                aria-label="Email"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-gold transition-colors"
-                aria-label="Twitter"
-              >
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-300 pt-12 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-700 text-sm">
+            &copy; {currentYear} Gordon Eleganti. All rights reserved.
+          </p>
+          <div className="flex space-x-6 mt-4 sm:mt-0 text-sm">
+            <Link href="#" className="text-gray-700 hover:text-amber-600 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="text-gray-700 hover:text-amber-600 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 002.856-3.915 3.967 3.967 0 01-1.017.27 5.5 5.5 0 002.416-3.03 11.016 11.016 0 01-3.288 1.256 5.5 5.5 0 00-9.475 5.02A15.64 15.64 0 011.671 3.149a5.5 5.5 0 001.703 7.35 5.47 5.47 0 01-2.49-.687v.069a5.5 5.5 0 004.414 5.39 5.52 5.52 0 01-2.48.092 5.507 5.507 0 005.141 3.821 11.04 11.04 0 01-6.84 2.366 15.62 15.62 0 008.433 2.467c10.12 0 15.631-8.379 15.631-15.63 0-.238-.005-.475-.014-.71a11.172 11.172 0 002.728-2.864z" />
                 </svg>

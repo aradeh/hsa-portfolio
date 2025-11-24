@@ -36,56 +36,65 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-black">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">
-            Get In Touch
-          </h2>
-          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
-          <p className="text-lg text-gray-400 font-light">
-            Have a project in mind? I&apos;d love to hear from you. Send me a message and I&apos;ll
-            respond as soon as possible.
-          </p>
-        </div>
+    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left - Contact Info */}
+          <div>
+            <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-light text-black mb-12 tracking-tight">
+              LET'S
+              <br />
+              <span className="italic font-serif font-light">Collaborate</span>
+            </h2>
 
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-8 border border-gold/30 p-8 lg:p-12 backdrop-blur-sm">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
-                placeholder="Your name"
-              />
-            </div>
+            <div className="space-y-8">
+              {/* Phone */}
+              <div>
+                <p className="text-sm font-bold text-black mb-2 tracking-widest uppercase">Phone</p>
+                <p className="text-lg text-black font-light">(123) 456 7890</p>
+              </div>
 
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
-                placeholder="your.email@example.com"
-              />
+              {/* Email */}
+              <div>
+                <p className="text-sm font-bold text-black mb-2 tracking-widest uppercase">Email</p>
+                <p className="text-lg text-black font-light">hello@reallyreatsite.com</p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <button
+                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-300 tracking-widest text-sm uppercase"
+                >
+                  Contact Me
+                </button>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex gap-6 pt-8">
+                <a href="#" className="w-12 h-12 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.3 5.3c0-1.8-1.5-3.3-3.3-3.3h-8c-1.8 0-3.3 1.5-3.3 3.3v8c0 1.8 1.5 3.3 3.3 3.3h8c1.8 0 3.3-1.5 3.3-3.3v-8z"/></svg>
+                </a>
+                <a href="#" className="w-12 h-12 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* Right - Featured Image */}
+          <div className="h-96 sm:h-[500px] overflow-hidden rounded-lg shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=700&fit=crop"
+              alt="Collaboration"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
           {/* Subject */}
           <div>
