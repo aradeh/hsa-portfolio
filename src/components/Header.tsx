@@ -38,12 +38,3 @@ export default function Header() {
     </header>
   );
 }
-            >
-              Contact
-            </Link>
-          </div>
-        )}
-      </nav>
-    </header>
-  );
-}
