@@ -2,7 +2,7 @@
 
 export default function About() {
   return (
-    <section id="about" className="relative min-h-screen py-20 sm:py-28 lg:py-32 bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600&h=900&fit=crop)' }}>
+    <section id="about" className="relative min-h-screen py-20 sm:py-28 lg:py-32 bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600&h=900&fit=crop)' }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
       
