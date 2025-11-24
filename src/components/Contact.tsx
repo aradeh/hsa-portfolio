@@ -63,7 +63,6 @@ export default function Contact() {
               {/* CTA Button */}
               <div className="pt-4">
                 <button
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-300 tracking-widest text-sm uppercase"
                 >
                   Contact Me
@@ -73,10 +72,10 @@ export default function Contact() {
               {/* Social Icons */}
               <div className="flex gap-6 pt-8">
                 <a href="#" className="w-12 h-12 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.3 5.3c0-1.8-1.5-3.3-3.3-3.3h-8c-1.8 0-3.3 1.5-3.3 3.3v8c0 1.8 1.5 3.3 3.3 3.3h8c1.8 0 3.3-1.5 3.3-3.3v-8z"/></svg>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54h2.86l3.32-4.04-3.43-4.16h-2.92l2.92 3.63z"/></svg>
                 </a>
                 <a href="#" className="w-12 h-12 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7s1.1 2.2.5 4.2z"/></svg>
                 </a>
               </div>
             </div>
@@ -91,60 +90,6 @@ export default function Contact() {
             />
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-          {/* Subject */}
-          <div>
-            <label htmlFor="subject" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition"
-              placeholder="Project subject"
-            />
-          </div>
-
-          {/* Message */}
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-gold mb-3 tracking-widest uppercase">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={5}
-              className="w-full px-4 py-3 bg-transparent border border-gold/50 text-white placeholder-gray-600 focus:border-gold focus:outline-none transition resize-none"
-              placeholder="Tell me about your project..."
-            ></textarea>
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full luxury-button"
-          >
-            Send Message
-          </button>
-
-          {/* Success Message */}
-          {submitted && (
-            <div className="bg-gold/10 border border-gold text-gold px-6 py-4">
-              ✅ Thank you for your message! I&apos;ll get back to you soon.
-            </div>
-          )}
-        </form>
       </div>
     </section>
   );
