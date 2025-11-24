@@ -26,14 +26,17 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 sm:py-28 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="relative min-h-screen py-20 sm:py-28 lg:py-32 bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=1600&h=900&fit=crop)' }}>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="mb-16">
-          <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-black mb-2 leading-tight">
+          <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-white mb-2 leading-tight">
             PAST
           </h2>
-          <p className="text-5xl sm:text-6xl font-serif font-light text-black italic">
+          <p className="text-5xl sm:text-6xl font-serif font-light text-white italic">
             Work
           </p>
         </div>
@@ -53,13 +56,13 @@ export default function Gallery() {
 
               {/* Content */}
               <div>
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-black mb-1">
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-1">
                   {item.title}
                 </h3>
-                <p className="text-sm font-light text-gray-600 mb-3 tracking-widest uppercase">
+                <p className="text-sm font-light text-gray-200 mb-3 tracking-widest uppercase">
                   {item.subtitle}
                 </p>
-                <p className="text-base text-gray-700 font-light leading-relaxed">
+                <p className="text-base text-gray-100 font-light leading-relaxed">
                   {item.description}
                 </p>
               </div>
